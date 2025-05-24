@@ -2,107 +2,131 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>m2repairs – Handy & PC Reparatur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>m2repairs – Technik, die läuft.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f1b26;
       color: #f0f0f0;
     }
 
     header {
-      background: #1a1a1a;
-      padding: 20px;
       text-align: center;
-      border-bottom: 2px solid #2ecc71;
+      padding: 40px 20px 20px;
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 10px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5em;
-      color: #2ecc71;
+      font-size: 2.2em;
+      color: #00c4f0;
     }
 
     nav {
+      background-color: #0c1720;
       display: flex;
       justify-content: center;
-      background: #141414;
-      padding: 10px;
-      gap: 20px;
+      gap: 30px;
+      padding: 15px 0;
+      border-top: 1px solid #1e2a38;
+      border-bottom: 1px solid #1e2a38;
     }
 
     nav a {
-      color: #ccc;
+      color: #ddd;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
-      color: #2ecc71;
+      color: #00c4f0;
     }
 
     .hero {
-      padding: 50px 20px;
+      padding: 60px 20px 30px;
       text-align: center;
     }
 
     .hero h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
+      font-size: 1.8em;
+      color: #00c4f0;
     }
 
     .hero p {
-      font-size: 1.2em;
-      color: #aaa;
+      color: #ccc;
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 15px auto 0;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
       padding: 40px 20px;
     }
 
     .card {
-      background: #1e1e1e;
+      background-color: #13202b;
       padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #333;
+      border-radius: 12px;
+      border: 1px solid #1e2a38;
+      text-align: center;
     }
 
     .card h3 {
-      color: #2ecc71;
+      color: #00c4f0;
       margin-top: 0;
     }
 
     footer {
-      background: #1a1a1a;
-      padding: 20px;
       text-align: center;
+      padding: 20px;
+      background-color: #0c1720;
+      color: #999;
       font-size: 0.9em;
-      border-top: 2px solid #2ecc71;
+      border-top: 1px solid #1e2a38;
     }
 
     .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #25d366;
+      background-color: #25d366;
       color: white;
-      padding: 12px 16px;
-      border-radius: 50px;
+      padding: 12px 18px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 1.5em;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <img src="logo.png" alt="m2repairs Logo">
     <h1>m2repairs</h1>
-    <p>Dein Partner für Handy, PC & Laptop Reparaturen</p>
+    <p>Technik. Verlässlich. Repariert.</p>
   </header>
 
   <nav>
@@ -113,31 +137,31 @@
   </nav>
 
   <section class="hero">
-    <h2>Schnell. Zuverlässig. Fair.</h2>
-    <p>Wir reparieren deine Technik – egal ob Displaybruch, Akku-Probleme oder Softwarefehler.</p>
+    <h2>Schnell. Fair. Lokal.</h2>
+    <p>Ob Smartphone, PC oder Laptop – bei uns bekommst du verlässliche Reparaturen zum fairen Preis.</p>
   </section>
 
   <section class="services">
     <div class="card">
       <h3>📱 Handy Reparatur</h3>
-      <p>Displaytausch, Akkuwechsel, Ladeprobleme & mehr</p>
+      <p>Displaytausch, Akkuwechsel, Ladebuchse & mehr</p>
     </div>
     <div class="card">
-      <h3>💻 Laptop & PC Service</h3>
-      <p>Hardwaretausch, SSD-Upgrades, Windows-Neuinstallationen</p>
+      <h3>💻 PC & Laptop Service</h3>
+      <p>SSD-Upgrade, Windows neu, Reinigung, Diagnose</p>
     </div>
     <div class="card">
-      <h3>🛡️ Datenrettung</h3>
-      <p>Wir retten deine Daten – schnell & diskret</p>
+      <h3>🛡️ Datenschutz</h3>
+      <p>Diskrete Behandlung deiner Geräte & Daten</p>
     </div>
     <div class="card">
-      <h3>🔧 Fehlerdiagnose</h3>
-      <p>Kostenlose Erstdiagnose bei allen Geräten</p>
+      <h3>🔧 Vor-Ort Service</h3>
+      <p>In Bad Kötzting & Umgebung – wir kommen vorbei!</p>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 m2repairs – Alle Rechte vorbehalten | Kontakt: kontakt@m2repairs.tech</p>
+    <p>&copy; 2025 m2repairs | kontakt@m2repairs.tech</p>
   </footer>
 
   <a class="whatsapp" href="https://wa.me/491234567890" target="_blank">📞 WhatsApp</a>
