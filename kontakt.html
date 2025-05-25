@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>m2repairs – Kontakt</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --main-color: #42c6ff;
+      --dark: #0f0f0f;
+      --light: #f7f7f7;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--main-color);
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #101010;
+      padding: 1rem;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--main-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact-box {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .contact-entry {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #333;
+    }
+
+    .contact-entry:last-child {
+      border-bottom: none;
+    }
+
+    .contact-entry i {
+      color: var(--main-color);
+      font-size: 1.5rem;
+      width: 30px;
+    }
+
+    .contact-entry a {
+      color: var(--light);
+      text-decoration: none;
+    }
+
+    .contact-entry a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #111;
+      color: #666;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kontakt</h1>
+    <p>So erreichst du uns – direkt, ehrlich, unkompliziert</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Startseite</a>
+    <a href="team.html">Unser Team</a>
+    <a href="leistungen.html">Leistungen</a>
+    <a href="ziel.html">Ziele</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <section class="animate__animated animate__fadeInUp">
+    <div class="contact-box">
+      <div class="contact-entry">
+        <i class="fas fa-envelope"></i>
+        <span>Email folgt in Kürze</span>
+      </div>
+      <div class="contact-entry">
+        <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/m2repairs.tech/" target="_blank">@m2repairs.tech</a>
+      </div>
+      <div class="contact-entry">
+        <i class="fab fa-facebook"></i>
+        <a href="https://www.facebook.com/profile.php?id=61576349231459&locale=de_DE" target="_blank">Facebook-Seite</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 m2repairs | Max & Michael | Alle Rechte vorbehalten
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
