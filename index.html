@@ -3,181 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>m2repairs – Technik, die läuft.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <title>m2repairs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
+    :root {
+      --main-color: #42c6ff;
+      --dark: #0f0f0f;
+      --light: #f7f7f7;
+    }
+
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0f1b26;
-      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      scroll-behavior: smooth;
     }
 
     header {
+      background: var(--main-color);
+      color: #fff;
+      padding: 2rem;
       text-align: center;
-      padding: 40px 20px 20px;
-    }
-
-    header img {
-      width: 120px;
-      margin-bottom: 10px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-      color: #00c4f0;
     }
 
     nav {
-      background-color: #0c1720;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
-      border-top: 1px solid #1e2a38;
-      border-bottom: 1px solid #1e2a38;
+      background: #101010;
+      padding: 1rem;
+      gap: 2rem;
     }
 
     nav a {
-      color: #ddd;
+      color: var(--main-color);
       text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s ease;
+      font-weight: bold;
     }
 
-    nav a:hover {
-      color: #00c4f0;
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
     }
 
-    .hero {
-      padding: 60px 20px 30px;
-      text-align: center;
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .hero h2 {
-      font-size: 1.8em;
-      color: #00c4f0;
-    }
-
-    .hero p {
-      color: #ccc;
-      font-size: 1.1em;
-      max-width: 600px;
-      margin: 15px auto 0;
-    }
-
-    .services {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .card {
-      background-color: #13202b;
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid #1e2a38;
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 8px;
       text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(66, 198, 255, 0.4);
     }
 
     .card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      color: #00c4f0;
-      margin-top: 0;
+      max-width: 80px;
+      margin-bottom: 1rem;
     }
 
     footer {
+      background: #111;
+      color: #666;
       text-align: center;
-      padding: 20px;
-      background-color: #0c1720;
-      color: #999;
-      font-size: 0.9em;
-      border-top: 1px solid #1e2a38;
-    }
-
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 1.5em;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
+      padding: 2rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="logo.png" alt="m2repairs Logo" />
     <h1>m2repairs</h1>
-    <p>Technik. Verlässlich. Repariert.</p>
+    <p>Technik. Ehrlich. Direkt.</p>
   </header>
 
   <nav>
-    <a href="#">Start</a>
-    <a href="#">Leistungen</a>
-    <a href="#">Über uns</a>
-    <a href="#">Kontakt</a>
+    <a href="#about">Über uns</a>
+    <a href="#services">Leistungen</a>
+    <a href="#ziel">Ziele</a>
+    <a href="#kontakt">Kontakt</a>
   </nav>
 
-  <section class="hero">
-    <h2>Schnell. Fair. Lokal.</h2>
-    <p>Ob Smartphone, PC oder Laptop – bei uns bekommst du verlässliche Reparaturen zum fairen Preis.</p>
+  <section id="about">
+    <h2 class="animate__animated animate__fadeInUp">Wer wir sind</h2>
+    <div class="card animate__animated animate__fadeInUp">
+      <p><strong>Max & Michael</strong> – Zwei Typen aus Bayern, die lieber schrauben als labern. Wir bringen kaputte Technik wieder zum Laufen – ehrlich, direkt und ohne große Show. Kein Bock auf heiße Luft, sondern auf echte Lösungen. Willkommen bei m2repairs.</p>
+    </div>
   </section>
 
-  <section class="services">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1603899128495-4f9ec58b8ed3?auto=format&fit=crop&w=800&q=80" alt="Handy Reparatur" />
-      <h3>📱 Handy Reparatur</h3>
-      <p>Displaytausch, Akkuwechsel, Ladebuchse & mehr</p>
+  <section id="services">
+    <h2 class="animate__animated animate__fadeInUp">Unsere Leistungen</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1792/1792931.png" alt="Reparatur">
+        <h3>PC-Reparatur</h3>
+        <p>Fehlerdiagnose, Hardwaretausch und Systemoptimierung</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1086/1086933.png" alt="Cleaning">
+        <h3>Cleaning & Pastewechsel</h3>
+        <p>Laptop-Innenreinigung & neue Wärmeleitpaste für bessere Kühlung</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Neuinstallation">
+        <h3>Windows-Setup</h3>
+        <p>Frische Installationen, Treiber, Tools, ready to go</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1197/1197529.png" alt="Upgrade">
+        <h3>Aufrüst-Beratung</h3>
+        <p>Individuelle Empfehlungen für dein Setup & Budget</p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1587202372775-a316b6f90f7b?auto=format&fit=crop&w=800&q=80" alt="Laptop Reparatur" />
-      <h3>💻 PC & Laptop Service</h3>
-      <p>SSD-Upgrade, Windows neu, Reinigung, Diagnose</p>
-    </div>
+  <section id="ziel">
+    <h2 class="animate__animated animate__fadeInUp">Unsere Vision</h2>
+    <p>Wir wollen mit m2repairs nicht einfach nur reparieren, sondern Vertrauen aufbauen. Technik soll nicht teuer und kompliziert sein – sondern ehrlich, zugänglich und menschlich.</p>
+  </section>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80" alt="Datenschutz" />
-      <h3>🛡️ Datenschutz</h3>
-      <p>Diskrete Behandlung deiner Geräte & Daten</p>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=800&q=80" alt="Vor-Ort-Service" />
-      <h3>🔧 Vor-Ort Service</h3>
-      <p>In Bad Kötzting & Umgebung – wir kommen vorbei!</p>
-    </div>
+  <section id="kontakt">
+    <h2 class="animate__animated animate__fadeInUp">Kontakt</h2>
+    <p>Schreib uns gerne per Mail: <a href="mailto:max@m2repairs.tech" style="color: var(--main-color);">max@m2repairs.tech</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 m2repairs | kontakt@m2repairs.tech</p>
+    &copy; 2025 m2repairs | Max & Michael | Alle Rechte vorbehalten
   </footer>
 
-  <a class="whatsapp" href="https://wa.me/491234567890" target="_blank">📞 WhatsApp</a>
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
 
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
