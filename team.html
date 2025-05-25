@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>m2repairs – Unser Team</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    :root {
+      --main-color: #42c6ff;
+      --dark: #0f0f0f;
+      --light: #f7f7f7;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--main-color);
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #101010;
+      padding: 1rem;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--main-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+
+    .fun-facts {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .fun-facts div {
+      background: #111;
+      padding: 1rem;
+      border-left: 4px solid var(--main-color);
+      border-radius: 4px;
+    }
+
+    footer {
+      background: #111;
+      color: #666;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Unser Team</h1>
+    <p>Max & Michael – die Leute hinter m2repairs</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Startseite</a>
+    <a href="#team">Unser Team</a>
+    <a href="#mission">Unsere Mission</a>
+    <a href="#facts">Fun Facts</a>
+  </nav>
+
+  <section id="team" class="animate__animated animate__fadeInUp">
+    <div class="card">
+      <h2>Wer wir sind</h2>
+      <p><strong>Max & Michael</strong> – zwei Freunde aus Bayern mit mehr Technik im Kopf als in der Schublade.</p>
+      <p>Wir haben <strong>m2repairs</strong> gestartet, weil wir keinen Bock mehr auf überteuerte "Reparaturen" hatten, bei denen am Ende mehr kaputt ist als vorher.</p>
+      <p>Unser Ziel? Klare Diagnosen, faire Preise und null Gelaber. Bei uns zählt nur das Ergebnis – und das darf sich sehen lassen.</p>
+    </div>
+  </section>
+
+  <section id="mission" class="animate__animated animate__fadeInUp">
+    <div class="card">
+      <h2>Unsere Mission</h2>
+      <p>Wir glauben an ehrliche Technik. Kein Fachchinesisch, kein "Sie brauchen aber ein neues Mainboard"-Blabla. 
+      Wir wollen zeigen, dass Reparatur auch menschlich, bezahlbar und transparent geht.</p>
+      <p>Ob Gaming-PC, Schul-Laptop oder Omas Medion-Kiste: Wir holen raus, was geht.</p>
+    </div>
+  </section>
+
+  <section id="facts" class="animate__animated animate__fadeInUp">
+    <div class="card">
+      <h2>Fun Facts ✨</h2>
+      <div class="fun-facts">
+        <div><strong>Max:</strong> baut Marken und Minecraft-Basen gleichzeitig. Trinkt mehr Proteinshakes als Wasser.</div>
+        <div><strong>Michael:</strong> trinkt mehr weißen Monster als alles andere. Kann Windows-Installationen im Schlaf durchführen.</div>
+        <div><strong>Gemeinsam:</strong> haben wir mal einen PC repariert, bei dem ein USB-Stick im CD-Laufwerk steckte.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 m2repairs | Max & Michael | Alle Rechte vorbehalten
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
